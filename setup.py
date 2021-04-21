@@ -37,6 +37,7 @@ setup(
         'autodiff': ['jax', 'jaxlib'],
         'testing': ['pytest'],
         'deploy': ['twine', 'cibuildwheel==1.1.0'],
+        'geotiff': ['gdal'],
     },
     entry_points={
         'console_scripts': [
