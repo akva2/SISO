@@ -52,8 +52,9 @@ class GeoTiffReader(Reader):
     def applicable(cls, filename: Path) -> bool:
         try:
             import gdal
+            assert filename.suffix.lower() in ('.tif', '.tiff')
             gdal.Open(str(filename))
-        except err:
+        except:
             return False
         return True
 
