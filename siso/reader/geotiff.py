@@ -23,8 +23,8 @@ class GeoTiffGeometryField(SimpleField):
     def patches(self, stepid: int, force: bool = False, **_) -> FieldPatches:
         tiepoint = self.data.GetGeoTransform()
         heights = self.data.GetRasterBand(1).ReadAsArray()
-        xs = np.arange(0, heights.shape[0]) + 0.5
-        ys = np.arange(0, heights.shape[1]) + 0.5
+        xs = np.arange(0, heights.shape[1]) + 0.5
+        ys = np.arange(0, heights.shape[0]) + 0.5
         xs, ys = np.meshgrid(xs, ys)
         trf_xs = tiepoint[0] + xs * tiepoint[1] + ys * tiepoint[2]
         trf_ys = tiepoint[3] + xs * tiepoint[4] + ys * tiepoint[5]

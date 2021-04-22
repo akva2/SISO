@@ -52,7 +52,7 @@ class CoordsType(click.ParamType):
         return rval
 
 
-FORMATS = ['vtf', 'vtk', 'vtu', 'vts', 'pvd', 'nc', 'dat']
+FORMATS = ['vtf', 'vtk', 'vtu', 'vts', 'pvd', 'nc', 'dat', 'g2']
 
 @click.command()
 @click.option('--fmt', '-f', type=click.Choice(FORMATS), required=False, help='Output format.')
