@@ -97,6 +97,7 @@ class AbstractVTKWriter(Writer):
                 raise TypeError(f"Unexpected cell type found: needed line, quad or hex")
             cells = patch.topology.cells
             cells = np.hstack([cells.shape[-1] * np.ones((len(cells), 1), dtype=int), cells]).ravel()
+            cells = cells.astype('i8')
             cellarray = vtkCellArray()
             cellarray.SetCells(len(cells), numpy_to_vtkIdTypeArray(cells))
             if patch.topology.celltype == Hex():
