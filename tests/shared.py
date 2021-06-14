@@ -80,7 +80,7 @@ MULTISTEP_FORMATS = {'pvd', 'vtf'}
 
 
 def testcase(sourcefile: Path, nsteps: Optional[int], formats: str,
-             *extra_args: str, suffix: str = '', abs_tol=1e-15, rel_tol=1e-7,
+             *extra_args: str, suffix: str = '', abs_tol=2e-7, rel_tol=2e-7,
              format_args: Dict[str, List[str]] = {}):
     """Create test cases for converting SOURCEFILE to every format listed
     in FORMATS.  NSTEPS should be None if the source data has no
